@@ -13,9 +13,11 @@ const PORT = process.env.PORT || 3001;
 /*****************|
 |* SET UP ROUTES *| 
 |*****************/
+
 // Setup app to serve static files from React App depending on dev/prod
 if (process.env.NODE_ENV === 'production') {
-	app.use(express.static(path.join(__dirname, './client', 'build')));
+	app.use(express.static("client/build"));
+
 }
 /*********************************|
 |* LISTEN FOR CONNECTION ON PORT *| 

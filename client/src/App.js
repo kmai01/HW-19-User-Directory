@@ -1,14 +1,19 @@
 import React from 'react';
 
+
+import Header from "./components/Header";
+// import Bodycontainer from "./components/Bodycontainer";
 import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Directory</p>
+    <div>
+      <Header />
+    
         
-      </header>
+        
+      
     </div>
   );
 }
