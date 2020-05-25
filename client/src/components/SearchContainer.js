@@ -9,6 +9,7 @@ class SearchContainer extends Component{
     
     search:"",
     result: [],
+    filter:"",
 
     }
 
@@ -30,18 +31,17 @@ componentDidMount() {
       })
       .catch((err) => console.log(err));
   }
-  filterEmployees = (searchkey) => {
+  filterPeople = (searchkey) => {
     var filterResult = this.state.result.filter(
-      (person) => person.firstName.includes(searchkey)
-    );
-
-    this.setState({
+      (person) => person.firstName === searchkey)
+      
+      this.setState({
       result: filterResult,
     });
   };
   handleFormSubmit = (event) => {
     event.preventDefault();
-    this.filterEmployees(this.state.search);
+    this.filterPeople(this.state.search);
   };
   handleInputChange = (event) => {
       console.log(event.target)
@@ -55,7 +55,7 @@ componentDidMount() {
   render() {
     return (
       <div className='container'>
-        <div className='searching'>
+        <div className='search'>
           <SearchForm
             value={this.state.search}
             handleInputChange={this.handleInputChange}
